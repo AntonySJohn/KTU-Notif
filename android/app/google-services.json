@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "402857719245",
+    "firebase_url": "https://ktu-app-backend.firebaseio.com",
+    "project_id": "ktu-app-backend",
+    "storage_bucket": "ktu-app-backend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402857719245:android:db3233f27863da6ed20084",
+        "android_client_info": {
+          "package_name": "com.antonysjohn.ktu_notifs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402857719245-4v5k1g8ghf5pqm3in8emg3h2oqfsqmk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgbDeLCcyBsZwGjM9ed9Tnf3cqs0XOwv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402857719245-4v5k1g8ghf5pqm3in8emg3h2oqfsqmk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
