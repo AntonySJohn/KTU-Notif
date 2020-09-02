@@ -3,7 +3,7 @@ import 'package:ktu_notifs/pages/mainbody.dart';
 import 'ui/drawer.dart';
 import 'dart:core';
 
-void main() async {
+void main async{
   runApp(MyApp());
 }
 
