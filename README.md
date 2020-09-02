@@ -1,6 +1,6 @@
 # KTU Notifs a.k.a Stanfurd Lite
 
-A Flutter app for checking the notifications posted by KTU
+A Flutter app for checking KTU notifications
 
 ## Gentle warning
 
