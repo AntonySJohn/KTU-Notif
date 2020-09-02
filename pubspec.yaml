@@ -32,7 +32,7 @@ dependencies:
   http: ^0.12.2
   firebase_core: ^0.5.0
   firebase_messaging: ^5.0.2
-
+  firebase_database: ^4.0.0
   # Database
   cloud_firestore: ^0.14.0
 
@@ -75,10 +75,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Pacifico
+    - family: RobotoLight
       fonts:
-        - asset: fonts/Pacifico/Pacifico-Regular.ttf
-    - family: Roboto
+        - asset: fonts/Roboto/Roboto-Light.ttf
+    - family: RobotoMedium
       fonts:
         - asset: fonts/Roboto/Roboto-Medium.ttf
   # fonts:

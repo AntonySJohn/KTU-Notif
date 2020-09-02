@@ -18,6 +18,7 @@ class NotifTitle extends StatelessWidget {
               height: 1.35,
               fontSize: 13.85,
               fontFamily: 'Roboto',
+              fontWeight: FontWeight.w400,
             ),
           ),
         ),
