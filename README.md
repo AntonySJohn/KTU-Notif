@@ -4,4 +4,4 @@ A Flutter app for checking KTU notifications
 
 ## Gentle warning
 
-This is the (Alpha v1) build, hence has incomplete functionality and/or non-critical bugs.
+This is the (Alpha v1) build, hence has limited functionality and/or non-critical bugs.
