@@ -5,15 +5,13 @@ import 'package:ktu_notifs/ui/html_display.dart';
 import 'package:ktu_notifs/ui/notif_title.dart';
 import 'package:ktu_notifs/ui/download_button.dart';
 import 'package:configurable_expansion_tile/configurable_expansion_tile.dart';
-import 'package:ktu_notifs/size_helper.dart';
+import 'file:///C:/FlutterProjects/ktu_notifs/lib/util/size_helper.dart';
 
-
-//TODO Add persistence of read notifications
 
 class TestList extends StatefulWidget {
   final Ktu notif;
   final bool _check;
-  const TestList(this.notif,this._check);
+  const TestList(this.notif, this._check);
   @override
   _TestListState createState() => _TestListState();
 }
@@ -23,22 +21,84 @@ class _TestListState extends State<TestList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        widget._check
+            ? Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: EdgeInsets.only(left: 5),
+                        child: SizedBox(
+                          child: Divider(
+                            thickness: 2,
+                          ),
+                          //width: 136.75,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Icon(
+                        Icons.keyboard_arrow_down,
+                        color: Colors.grey.shade600,
+                      ),
+                    ),
+                    Container(
+                      child: Text(
+                        '${int.parse(widget.notif.year)}',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey.shade600,
+                        ),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Icon(
+                        Icons.keyboard_arrow_down,
+                        color: Colors.grey.shade600,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: EdgeInsets.only(right: 5),
+                        child: SizedBox(
+                          child: Divider(
+                            thickness: 2,
+                          ),
+                          //width: 136.75,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            : Container(),
         Card(
           margin: EdgeInsets.symmetric(vertical: 3),
           child: ConfigurableExpansionTile(
             header: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly, //TODO test
               children: <Widget>[
-                DateDisplay(year: widget.notif.year.toString(),month: widget.notif.month.toString(),day: widget.notif.day.toString(),ratio: displayWidth(context)),
+                DateDisplay(
+                    year: widget.notif.year.toString(),
+                    month: widget.notif.month.toString(),
+                    day: widget.notif.day.toString(),
+                    ratio: displayWidth(context)),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 0),
                   height: 50,
                   child: VerticalDivider(
                     color: Colors.grey.shade300,
                     thickness: 2,
-                    width: 0.05*displayWidth(context),
+                    width: 0.05 * displayWidth(context),
                   ),
                 ),
-                NotifTitle(title: widget.notif.title,ratio: displayWidth(context)),
+                NotifTitle(
+                    title: widget.notif.title, ratio: displayWidth(context)),
                 //SizedBox(width: 5),
               ],
             ),
@@ -59,10 +119,10 @@ class _TestListState extends State<TestList> {
                             child: Divider(
                               thickness: 2,
                             ),
-                            width: .8*displayWidth(context),
+                            width: .8 * displayWidth(context),
                           ),
                           HtmlDisplay(html: widget.notif.html),
-                          downloadButtonList(widget.notif.urls),
+                          downloadButtonList(widget.notif.urls,displayWidth(context)),
                           SizedBox(height: 10),
                         ],
                       ),
@@ -73,60 +133,6 @@ class _TestListState extends State<TestList> {
             ],
           ),
         ),
-        widget._check? Center(
-          child: Row(
-            children: [
-              Expanded(
-                flex: 1,
-                child: Container(
-                  padding: EdgeInsets.only(left: 5),
-                  child: SizedBox(
-                    child: Divider(
-                      thickness: 2,
-                    ),
-                    //width: 136.75,
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 10),
-                child: Icon(
-                  Icons.keyboard_arrow_down,
-                  color: Colors.grey.shade600,
-                ),
-              ),
-              Container(
-                child: Text(
-                  '${int.parse(widget.notif.year)-1}',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey.shade600,
-                  ),
-                ),
-                padding: EdgeInsets.symmetric(horizontal: 10),
-              ),
-              Container(
-                padding: EdgeInsets.only(right: 10),
-                child: Icon(
-                  Icons.keyboard_arrow_down,
-                  color: Colors.grey.shade600,
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  padding: EdgeInsets.only(right: 5),
-                  child: SizedBox(
-                    child: Divider(
-                      thickness: 2,
-                    ),
-                    //width: 136.75,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ):Container(),
       ],
     );
   }
